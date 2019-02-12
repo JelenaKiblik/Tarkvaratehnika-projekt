@@ -1,4 +1,4 @@
-# Tarkvaratehnika oprojekt
+# ITI0208 Tarkvaratehnika projekt
 <h1>Retsepti äpp</h1>
 
 Projekti eesmärk on teha veebirakendus, kus on võimalik retsepte vaadata ja otsida, sisseloginud kasutaja saab lisaks retsepte lisada, redigeerida, kustutada, hinnata ning samuti jätta kommentaare retseptide lehtedele. Retseptilehel on lisaks pilt või pildid valmis einest.
