@@ -16,10 +16,10 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner demo(RecipeRepository repository) {
+    public CommandLineRunner demo(main.java.ee.ttu.tarkvaratehnika.RecipeRepository repository) {
         return (args) -> {
             // save a couple of recipes
-            repository.save(new Recipe("kotletid", "Sega hakkliha maitseainetega. Pane pannile kuni muutub pruuniks.", "hakkliha, maitseained", 5, 1));
+            repository.save(new main.java.ee.ttu.tarkvaratehnika.Recipe("kotletid", "Sega hakkliha maitseainetega. Pane pannile kuni muutub pruuniks.", "hakkliha, maitseained", 5, 1));
 
             // fetch all recipes
             log.info("Recipes found with findAll():");
