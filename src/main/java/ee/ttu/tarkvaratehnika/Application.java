@@ -30,7 +30,7 @@ public class Application {
             log.info("");
 
             // fetch an individual recipe by ID
-            repository.findByName(1L)
+            repository.findById(1L)
                     .ifPresent(recipe -> {
                         log.info("Recipe found with findById(1L):");
                         log.info("--------------------------------");
