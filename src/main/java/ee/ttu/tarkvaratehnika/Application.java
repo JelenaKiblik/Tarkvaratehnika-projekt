@@ -1,4 +1,4 @@
-package main.java.ee.ttu.tarkvaratehnika;
+package ee.ttu.tarkvaratehnika;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner demo(main.java.ee.ttu.tarkvaratehnika.RecipeRepository repository) {
+    public CommandLineRunner demo(RecipeRepository repository) {
         return (args) -> {
             // save a couple of recipes
             repository.save(new main.java.ee.ttu.tarkvaratehnika.Recipe("kotletid", "Sega hakkliha maitseainetega. Pane pannile kuni muutub pruuniks.", "hakkliha, maitseained", 5, 1));

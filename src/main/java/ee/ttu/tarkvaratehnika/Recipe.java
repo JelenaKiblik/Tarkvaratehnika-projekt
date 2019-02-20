@@ -1,4 +1,4 @@
-package main.java.ee.ttu.tarkvaratehnika;
+package ee.ttu.tarkvaratehnika;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

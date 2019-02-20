@@ -1,4 +1,4 @@
-package main.java.ee.ttu.tarkvaratehnika;
+package ee.ttu.tarkvaratehnika;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

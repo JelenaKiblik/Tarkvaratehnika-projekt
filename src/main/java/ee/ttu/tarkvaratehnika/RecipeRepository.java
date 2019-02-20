@@ -1,4 +1,4 @@
-package main.java.ee.ttu.tarkvaratehnika;
+package ee.ttu.tarkvaratehnika;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
