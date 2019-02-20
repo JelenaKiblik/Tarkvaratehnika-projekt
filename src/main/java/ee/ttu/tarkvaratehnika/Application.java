@@ -18,10 +18,8 @@ public class Application {
     @Bean
     public CommandLineRunner demo(RecipeRepository repository) {
         return (args) -> {
-            // save a couple of recipes
-            repository.save(new Recipe("kotletid", "Sega hakkliha maitseainetega. Pane pannile kuni muutub pruuniks.", "hakkliha, maitseained", 5, 1));
+            repository.save(new Recipe("chocolate fudge cake", "Sandwich the two cakes together with the butter icing and cover the sides and the top of the cake with more butter icing.", "cocoa powder, self-raising flour, caster sugar, eggs"));
 
-            // fetch all recipes
             log.info("Recipes found with findAll():");
             log.info("-------------------------------");
             for (Recipe recipe : repository.findAll()) {
@@ -29,7 +27,6 @@ public class Application {
             }
             log.info("");
 
-            // fetch an individual recipe by ID
             repository.findById(1L)
                     .ifPresent(recipe -> {
                         log.info("Recipe found with findById(1L):");
@@ -38,27 +35,12 @@ public class Application {
                         log.info("");
                     });
 
-            // fetch recipes by name
-            log.info("Recipe found with findByName('klassikaline võileib'):");
+            log.info("Recipe found with findByName('chocolate fudge cake'):");
             log.info("--------------------------------------------");
-            repository.findByName("klassikaline võileib").forEach(võiku -> {
-                log.info(võiku.toString());
+            repository.findByName("chocolate fudge cake").forEach(chocolate -> {
+                log.info(chocolate.toString());
             });
-            // for (Recipe võiku: repository.findByName("klassikaline võileib")) {
-            // 	log.info(võiku.toString());
-            // }
             log.info("");
         };
-	/*	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowCredentials(true);
-		// *** URL below needs to match the Vue client URL and port ***
-		config.setAllowedOrigins(Collections.singletonList("http://localhost:9000"));
-		config.setAllowedMethods(Collections.singletonList("*"));
-		config.setAllowedHeaders(Collections.singletonList("*"));
-		source.registerCorsConfiguration("/**", config);
-		FilterRegistrationBean bean = new FilterRegistrationBean<>(new CorsFilter(source));
-		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-		return bean;*/
     }
 }

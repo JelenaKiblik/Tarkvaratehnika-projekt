@@ -13,19 +13,15 @@ public class Recipe {
     private String name;
     private String description;
     private String materials;
-    private int price;
-    private int portion;
 
 
     protected Recipe() {
     }
 
-    public Recipe(String name, String description, String materials, int price, int portion) {
+    public Recipe(String name, String description, String materials) {
         this.name = name;
         this.description = description;
         this.materials = materials;
-        this.price = price;
-        this.portion = portion;
     }
 
     public Long getId() {
@@ -60,26 +56,10 @@ public class Recipe {
         this.materials = materials;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getPortion() {
-        return portion;
-    }
-
-    public void setPortion(int portion) {
-        this.portion = portion;
-    }
-
     @Override
     public String toString() {
         return String.format(
-                "Recipe[id=%d, name='%s', description='%s', materials='%s', price='%d', portion='%d']",
-                id, name, description, materials, price, portion);
+                "Recipe[id=%d, name='%s', description='%s', materials='%s']",
+                id, name, description, materials);
     }
 }
