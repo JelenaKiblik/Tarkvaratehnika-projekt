@@ -24,3 +24,5 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+/web/node_modules

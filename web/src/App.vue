@@ -1,81 +1,60 @@
 <template>
-    <div id = 'app'>
-        <md-toolbar class="md-medium md-accent">
-            <h1 class="md-title" style="flex: 1"><b>Project: Recipe box</b></h1>
-            <modal v-on:add="addItem"></modal>
-        </md-toolbar>
-        <md-layout md-align="center">
-            <recipes :recipes='recipes' v-on:del="delItem" v-on:editIt="editItem"></recipes>
-        </md-layout>
+    <div id="app">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+            <div class="container">
+                <router-link to="/" class="navbar-brand">Kodu</router-link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/Recipes">Retseptid</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/AddRecipe">Lisa retsept</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/MyAccount">Minu konto</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <transition name="moveInUp">
+                <router-view/>
+            </transition>
+
+        </div>
+
     </div>
 </template>
 
+
 <script>
-    import modal from './components/modal.vue'
-    import recipes from './components/recipe.vue'
-    var recipes_data = [
-        {
-            title: 'Pumpkin Pie',
-            ingredients: [
-                'Pumpkin Puree',
-                'Sweetened Condensed Milk',
-                'Eggs',
-                'Pumpkin Pie Spice',
-                'Pie Crust'
-            ]
-        },
-        {
-            title: 'Spaghetti',
-            ingredients: ['Noodles', 'Tomato Sauce', '(Optional) Meatballs']
-        },
-        {
-            title: 'Onion Pie',
-            ingredients: ['Onion', 'Pie Crust', 'Sounds Yummy right?']
-        }
-    ]
-    var localrecipes
-    if(localStorage.getItem('recipes') && localStorage.getItem('recipes').length != 0){
-        localrecipes = JSON.parse(localStorage.getItem('recipes'))
-    }
-    else{
-        localStorage.setItem('recipes',JSON.stringify(recipes_data))
-        localrecipes = recipes_data.splice(0)
-    }
+    import axios from "axios";
+    import Home from "./components/Home.vue"
     export default {
-        name: 'app',
-        components: {
-            modal,
-            recipes
+        name: 'App',
+        component: {
+            Home
         },
-        data: function () {
-            return {
-                recipes: localrecipes
-            }
-        },
-        methods: {
-            addItem (item) {
-                this.recipes.push({
-                    title: item.title,
-                    ingredients: item.ingredients
-                })
-                localStorage.setItem('recipes',JSON.stringify(this.recipes))
-            },
-            delItem (index) {
-                console.log(index)
-                this.recipes.splice(index,1)
-                localStorage.setItem('recipes',JSON.stringify(this.recipes))
-            },
-            editItem (recipe) {
-                //Using object destructuring assignment
-                const {id, title, ingredients} = recipe
-                //let title = recipe.title
-                //let ingredients = recipe.ingredients
-                this.recipes[id].title = title
-                this.recipes[id].ingredients = ingredients
-                localStorage.setItem('recipes',JSON.stringify(this.recipes))
-            }
+        mounted () {
+            axios.get('http://localhost:8080/hello-world').then(response => (this.home = response.data));
         }
     }
 </script>
 
-<style src="../node_modules/vue-material/dist/vue-material.css"></style>
+<style>
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+</style>
