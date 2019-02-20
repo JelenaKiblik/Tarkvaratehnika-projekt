@@ -43,7 +43,7 @@
             Home
         },
         mounted () {
-            axios.get('http://localhost:8080/hello-world').then(response => (this.home = response.data));
+            axios.get('http://localhost:63342/hello-world').then(response => (this.home = response.data));
         }
     }
 </script>
