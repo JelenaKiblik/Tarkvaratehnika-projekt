@@ -9,4 +9,5 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "recipe", path = "recipe")
 public interface RecipeRepository extends CrudRepository<Recipe, Long> {
     List<Recipe> findByName (@Param("name") String name);
+
 }

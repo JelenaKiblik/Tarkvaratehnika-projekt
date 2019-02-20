@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <h1>Simple Cooking</h1>
+        <h1>FoodBook</h1>
 
         <h2>{{ msg }}</h2>
     </div>
@@ -11,7 +11,7 @@
         name: 'Home',
         data () {
             return {
-                msg: 'Welcome to SimpleCooking App'
+                msg: 'Welcome to FoodBook App'
             }
         }
     }
