@@ -23,6 +23,7 @@ public class Recipe {
     @Column(name = "recipe_name")
     private String recipeName;
 
+
     @NotNull
     @Column(name = "recipe_description")
     private String recipeDescription;
