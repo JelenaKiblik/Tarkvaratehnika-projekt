@@ -27,7 +27,6 @@ public class Recipe {
     @Column(name = "recipe_description")
     private String recipeDescription;
 
-
     /*
     @Valid
     @ElementCollection(fetch = FetchType.EAGER)
