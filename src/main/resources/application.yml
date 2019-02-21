@@ -1,2 +1,8 @@
 server:
 port: 9000
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:hsqldbmem
+  jpa:
+    hibernate:
+      ddl-auto: none
