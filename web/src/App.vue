@@ -3,10 +3,9 @@
     <div id="app">
         <nav class="menu">
             <div class="container">
-
                 <div class="menu-bar" >
 
-                    <ul style="display: flex; justify-content: space-between">
+                    <ul class="header-ul" style="display: flex; justify-content: space-between">
                         <li>
                             <h1 class="header-logo">FoodBook</h1>
                         </li>
@@ -98,7 +97,7 @@
     }
 
 
-    ul {
+    .header-ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -114,11 +113,11 @@
         float: right;
     }
 
-    li {
+    .header-ul li {
         float: left;
     }
 
-    li a {
+    .header-ul li a {
         display: block;
         color: white;
         text-align: center;
@@ -126,7 +125,7 @@
         text-decoration: none;
     }
 
-    li a:hover {
+    .header-ul li a:hover {
         background-color: salmon;
     }
 
