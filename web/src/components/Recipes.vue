@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <h3>Recipes</h3>
             <ul>
-                <li v-for="recipe in recipes" :key=recipe.id>
+                <li class="recipe-item" v-for="recipe in recipes" :key=recipe.id>
                     <router-link :to="{
                                 name: 'recipe-details',
                                 params:{ recipe: recipe, id:recipe.id }}">
@@ -47,4 +47,11 @@
 </script>
 
 <style scoped>
+    .recipe-item {
+        border: black 1px;
+        border-style: solid;
+        list-style-type: none;
+        margin: 20px;
+        padding-bottom: 10px;
+    }
 </style>
