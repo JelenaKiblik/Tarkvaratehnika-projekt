@@ -1,7 +1,7 @@
 <template>
     <div id="recipeapp">
         <div class="AddRecipe">
-            <h2>Add new recipe</h2>
+            <h3>Add new recipe</h3>
             <form style="display: flex; flex-direction: column; align-items: baseline; justify-content: space-around " action="http://localhost:9000/#/Recipes" method="get">
                 Name: <input v-model="name" type="text" name="Name" id="user_input"><br>
                 Description: <input v-model="description" type="text" name="Description"><br>
@@ -23,7 +23,7 @@
         }
     }
     window.onload = function () {
-        const app = new Vue({
+        new Vue({
             el: '#recipeapp',
             data: {
                 recipes: [],

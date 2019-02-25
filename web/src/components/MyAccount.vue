@@ -1,5 +1,5 @@
 <template>
-    <h1>My account</h1>
+    <h3 style="float:left">My account</h3>
 </template>
 
 <script>

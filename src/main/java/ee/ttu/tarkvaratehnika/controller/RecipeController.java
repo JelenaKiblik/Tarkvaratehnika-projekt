@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.List;
-
 @RestController
 @CrossOrigin(origins = "http://localhost:9000")
 public class RecipeController {
@@ -24,7 +21,7 @@ public class RecipeController {
     @GetMapping(value = "/recipes", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Recipe> getAll() {
         for (Recipe r : recipeService.getAll()) {
-            System.out.println(r.getRecipeName());
+            System.out.println(r);
         }
         return recipeService.getAll();
     }

@@ -1,18 +1,8 @@
 package ee.ttu.tarkvaratehnika;
 
-import ee.ttu.tarkvaratehnika.dao.RecipeRepository;
-//import ee.ttu.tarkvaratehnika.model.Ingredient;
-import ee.ttu.tarkvaratehnika.model.Recipe;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @SpringBootApplication
 public class Application {
