@@ -3,9 +3,8 @@ package ee.ttu.tarkvaratehnika.model;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+
 
 @Data
 @Entity

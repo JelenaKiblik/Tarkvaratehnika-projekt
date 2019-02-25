@@ -1,42 +1,50 @@
 <template>
-    <div>
-        <h1>Recipes</h1>
-        <!--{{ recipes }}-->
-
-        <ul id="listRecipes">
-            <li class="recipe-item" v-for="item in recipes" :key="item.id">
-                <h3>{{item.recipeName}}</h3>
-                {{item.recipeDescription}}
-            </li>
-        </ul>
-
+    <div class="list row">
+        <div class="col-md-6">
+            <h3>Recipes</h3>
+            <ul>
+                <li v-for="(recipe, index) in recipes" :key="index">
+                    <router-link :to="{
+                                name: 'recipe-details',
+                                params:{ recipe: recipe, id:recipe.id }}">
+                        {{recipe.name}}
+                    </router-link>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <router-view @refreshData="refreshList"></router-view>
+        </div>
     </div>
-
 
 </template>
 
 <script>
-    import axios from "axios";
+    import http from "../http-common";
     export default {
         name: "Recipes",
-        data (){
-            return{
-                title:'Recipes',
-                recipes: null
+        data() {
+            return {
+                recipes: []
             }
         },
-        mounted () {
-            axios.get('http://localhost:8080/recipes').then(response => (this.recipes = response.data));
+        methods: {
+            retrieveRecipes() {
+                http.
+                get("/recipes").
+                then(response=> {
+                    this.recipes = response.data;
+                })
+            },
+            refreshList() {
+                this.retrieveRecipes();
+            }
+        },
+        mounted() {
+            this.retrieveRecipes();
         }
-    }
+    };
 </script>
 
 <style scoped>
-    .recipe-item {
-        border: black 1px;
-        border-style: solid;
-        list-style-type: none;
-        margin: 20px;
-        padding-bottom: 10px;
-    }
 </style>
