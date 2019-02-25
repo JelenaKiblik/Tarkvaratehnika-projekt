@@ -3,11 +3,11 @@
         <div class="col-md-6">
             <h3>Recipes</h3>
             <ul>
-                <li v-for="(recipe, index) in recipes" :key="index">
+                <li v-for="recipe in recipes" :key=recipe.id>
                     <router-link :to="{
                                 name: 'recipe-details',
                                 params:{ recipe: recipe, id:recipe.id }}">
-                        {{recipe.name}}
+                        {{recipe.recipeName}}
                     </router-link>
                 </li>
             </ul>
