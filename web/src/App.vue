@@ -1,4 +1,5 @@
 <template>
+    <header>
     <div id="app">
         <nav class="menu">
             <div class="container">
@@ -12,7 +13,7 @@
 
                         <li class="search-box">
                             <input type="text" placeholder="Find recipes.." class="form-control">
-                            <button type="submit">Submit</button>
+                            <button type="submit">Find</button>
                         </li>
 
                         <div class="menu-buttons">
@@ -40,8 +41,8 @@
             </transition>
 
         </div>
-
     </div>
+    </header>
 </template>
 
 
@@ -66,7 +67,7 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #382c50;
-        margin-top: 70px;
+        margin-top: 100px;
     }
 
     .header-logo {
@@ -84,13 +85,16 @@
     }
 
     button {
-        background-color: white;
-        border: black 1px;
+        background-color: antiquewhite;
+        padding:0.3em 1.2em;
+        margin:0 0.1em 0.1em 0;
+        border:0.16em solid rgba(255,255,255,0);
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-weight:300;
         color: black;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 13px;
+        text-align:center;
     }
 
 

@@ -1,12 +1,12 @@
 <template>
     <div id="recipeapp">
         <div class="AddRecipe">
-            <h2 style="float:left">Add new recipe</h2>
-            <form action="http://localhost:9000/#/Recipes" method="get">
+            <h2>Add new recipe</h2>
+            <form style="display: flex; flex-direction: column; align-items: baseline; justify-content: space-around " action="http://localhost:9000/#/Recipes" method="get">
                 Name: <input v-model="name" type="text" name="Name" id="user_input"><br>
                 Description: <input v-model="description" type="text" name="Description"><br>
                 Ingredients: <input v-model="ingredients" type="text" name="Ingredients"><br>
-                <button @click="addRecipe">Save</button>
+                <button class="saveBTN" @click="addRecipe">Save</button>
             </form>
         </div>
     </div>
@@ -74,4 +74,22 @@
     form {
         float: left;
     }
+
+    form {
+        border: black 1px;
+        top: 50%;
+        left: 50%;
+        margin: 50px;
+
+    }
+
+    input {
+        width: 100%;
+        margin: 10px 0 0;
+    }
+
+    .saveBTN {
+        border: black 1px ;
+    }
+
 </style>
