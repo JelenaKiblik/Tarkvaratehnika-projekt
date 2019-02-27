@@ -84,7 +84,7 @@
     }
 
     button {
-        background-color: antiquewhite;
+        background-color: #a5c5fa;
         padding:0.3em 1.2em;
         margin:0 0.1em 0.1em 0;
         border:0.16em solid rgba(255,255,255,0);
@@ -102,7 +102,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: darksalmon;
+        background-color: #8aa1e9;
         position: fixed;
         top:0;
         left: 0;
@@ -126,7 +126,7 @@
     }
 
     .header-ul li a:hover {
-        background-color: salmon;
+        background-color: #98a5fa;
     }
 
 </style>
