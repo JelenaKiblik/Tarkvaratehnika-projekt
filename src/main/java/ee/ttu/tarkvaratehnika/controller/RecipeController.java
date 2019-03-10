@@ -53,4 +53,8 @@ public class RecipeController {
     public void deleteAll() {
         recipeService.deleteAll();
     }
+
+    @PutMapping(value = "/recipes/{id}")
+    public void changeRecipe(@RequestBody Recipe recipe) {
+    }
 }

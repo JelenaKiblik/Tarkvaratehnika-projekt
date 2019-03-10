@@ -15,55 +15,50 @@
 <script>
     import http from "../http-common";
     export default {
-        name: 'add-recipe',
+        name: 'AddRecipe',
         data() {
             return {
-                recipe:{
-                    id:0,
-                    name: "",
-                    description: "",
-                    materials: "",
-                },
-                submitted: false
-            };
+                title: 'AddRecipe',
+                name: null,
+                description: null,
+                ingredients: null
+            }
         },
         methods: {
-            addRecipe() {
-                let data = {
-                    name: this.recipe.name,
-                    description: this.recipe.description,
-                    materials: this.recipe.materials,
-                };
-                http
-                    .post("/recipe", data)
-                    .then(response => {
-                        this.recipe.id = response.data.id;
-                    });
-                this.submitted = true;
-            },
-            newRecipe() {
-                this.submitted = false;
-                this.recipe = {};
+            addRecipe: function (event) {
+                http.post("/recipes", {
+                    recipeName: this.name,
+                    recipeDescription: this.description
+                });
+                //ei tee brauserile refreshi
+                if (event) event.preventDefault()
             }
         }
-    };
+    }
 </script>
 
-
 <style scoped>
+    h3 {
+        margin-top:150px;
+    }
     input {
         width: 50%;
         margin: 10px 0 0;
+    }
+    form {
+        float: left;
     }
     form {
         border: black 1px;
         top: 50%;
         left: 50%;
         margin: 50px;
-
+    }
+    input {
+        width: 100%;
+        margin: 10px 0 0;
     }
     .saveBTN {
         border: black 1px ;
     }
-
 </style>

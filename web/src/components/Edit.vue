@@ -1,15 +1,14 @@
 <template>
-
     <div class="edit">
         <div class="container">
-            <h4>{{this.recipe.name}}</h4>
+            <h3>{{this.recipe.name}}</h3>
 
             <div v-if="this.recipe" style="text-align:left">
                 <div>
-                    <label>Kirjeldus: </label> {{this.recipe.description}}
+                    <label>Description: </label> {{this.recipe.description}}
                 </div>
                 <div>
-                    <label>Materialid: </label> {{this.recipe.materials}}
+                    <label>Ingredients: </label> {{this.recipe.ingredients}}
                 </div>
 
             </div>
@@ -29,6 +28,9 @@
 
 
 <style scoped>
+    h3 {
+        margin-top: 20%;
+    }
     form {
         margin: 30px;
         float: left;

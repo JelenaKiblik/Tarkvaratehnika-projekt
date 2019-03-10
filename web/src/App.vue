@@ -1,9 +1,8 @@
 <template>
-    <header>
     <div id="app">
+
         <nav class="menu">
             <div class="container">
-                <div class="menu-bar" >
 
                     <ul class="header-ul" style="display: flex; justify-content: space-between">
                         <li>
@@ -11,7 +10,7 @@
                         </li>
 
                         <li class="search-box">
-                            <input type="text" placeholder="Find recipes.." class="form-control">
+                            <input type="text" placeholder="Find recipe ..." class="form-control">
                             <button type="submit">Find</button>
                         </li>
 
@@ -29,12 +28,11 @@
                             <li>
                                 <router-link to="/MyAccount">My account</router-link>
                             </li>
-                            <li>
-                                <router-link to="/Edit">Edit recipe</router-link>
-                            </li>
+                            <!--<li>-->
+                                <!--<router-link to="/Edit">Edit recipe</router-link>-->
+                            <!--</li>-->
                         </div>
                     </ul>
-                </div>
             </div>
         </nav>
         <div class="container">
@@ -44,7 +42,6 @@
 
         </div>
     </div>
-    </header>
 </template>
 
 
@@ -70,6 +67,7 @@
         text-align: center;
         color: #382c50;
         margin-top: 50px;
+        width:80%;
     }
 
     .header-logo {
@@ -99,6 +97,9 @@
         text-align:center;
     }
 
+    .menu-buttons {
+        float: right;
+    }
 
     .header-ul {
         list-style-type: none;

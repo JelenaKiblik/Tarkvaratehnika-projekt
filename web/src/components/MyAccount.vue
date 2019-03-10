@@ -1,5 +1,5 @@
 <template>
-    <h3 style="float:left">My account</h3>
+    <h3>My account</h3>
 </template>
 
 <script>
@@ -9,4 +9,7 @@
 </script>
 
 <style scoped>
+    h3 {
+        margin-top:150px;
+    }
 </style>
