@@ -6,6 +6,8 @@
                 Name: <input v-model="name" type="text" name="Name" id="user_input"><br>
                 Description: <input v-model="description" type="text" name="Description"><br>
                 Ingredients: <input v-model="ingredients" type="text" name="Ingredients"><br>
+                Upload image: <input type="file" @change="onFileChanged">
+                <button class="uploadBTN"@click="onUpload">Upload!</button>
                 <button class="saveBTN" @click="addRecipe">Save</button>
             </form>
         </div>
@@ -33,6 +35,20 @@
                 //ei tee brauserile refreshi
                 if (event) event.preventDefault()
             }
+        },
+
+        data_image() {
+            return {
+                selectedFile: null
+            }
+        },
+        methods_image: {
+            onFileChanged(event) {
+                this.selectedFile = event.target.files[0]
+            },
+            onUpload() {
+                // upload file, get it from this.selectedFile
+            }
         }
     }
 </script>
@@ -58,7 +74,12 @@
         width: 100%;
         margin: 10px 0 0;
     }
+    .uploadBTN{
+        margin-top: 10px;
+        border: black 1px ;
+    }
     .saveBTN {
+        margin-top: 10px;
         border: black 1px ;
     }
 </style>
