@@ -15,27 +15,38 @@
 <script>
     import http from "../http-common";
     export default {
-        name: 'AddRecipe',
+        name: 'add-recipe',
         data() {
             return {
-                title: 'AddRecipe',
-                name: null,
-                description: null,
-                ingredients: null
-            }
+                recipe:{
+                    id:0,
+                    name: "",
+                    description: "",
+                    materials: "",
+                },
+                submitted: false
+            };
         },
         methods: {
-            addRecipe: function (event) {
-                http.post("/recipes", {
-                    recipeName: this.name,
-                    recipeDescription: this.description
-
-                });
-                //ei tee brauserile refreshi
-                if (event) event.preventDefault()
+            addRecipe() {
+                let data = {
+                    name: this.recipe.name,
+                    description: this.recipe.description,
+                    materials: this.recipe.materials,
+                };
+                http
+                    .post("/recipe", data)
+                    .then(response => {
+                        this.recipe.id = response.data.id;
+                    });
+                this.submitted = true;
+            },
+            newRecipe() {
+                this.submitted = false;
+                this.recipe = {};
             }
         }
-    }
+    };
 </script>
 
 
@@ -45,22 +56,12 @@
         margin: 10px 0 0;
     }
     form {
-        float: left;
-    }
-
-    form {
         border: black 1px;
         top: 50%;
         left: 50%;
         margin: 50px;
 
     }
-
-    input {
-        width: 100%;
-        margin: 10px 0 0;
-    }
-
     .saveBTN {
         border: black 1px ;
     }

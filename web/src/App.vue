@@ -29,6 +29,9 @@
                             <li>
                                 <router-link to="/MyAccount">My account</router-link>
                             </li>
+                            <li>
+                                <router-link to="/Edit">Edit recipe</router-link>
+                            </li>
                         </div>
                     </ul>
                 </div>
@@ -61,12 +64,12 @@
 
 <style>
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: Geneva, Arial, Helvetica, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #382c50;
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .header-logo {

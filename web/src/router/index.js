@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Recipes from '@/components/Recipes'
 import AddRecipe from '@/components/AddRecipe'
 import MyAccount from '@/components/MyAccount'
+import Edit from "../components/Edit";
 
 Vue.use(Router)
 
@@ -28,6 +29,12 @@ export default new Router({
             path: '/MyAccount',
             name: 'MyAccount',
             component: MyAccount
-        }
+        },
+        {
+            path: '/recipe/:id/edit',
+            name: 'Edit',
+            component: Edit
+
+        },
     ]
 })
