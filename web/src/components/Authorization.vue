@@ -1,21 +1,33 @@
 <template>
-    <div class="authorization" >
-
-        <h3>{{ msg }}</h3>
-    </div>
+    <form id="authorization" v-on:submit.prevent="authorization">
+        <input type='text' placeholder='username' v-model='username'>
+        <input type='password' placeholder='password' v-model='password'>
+        <button class="ui primary button">
+            Submit
+        </button>
+    </form>
 </template>
 
 <script>
+    import {AUTH_REQUEST} from "../store/constants";
     export default {
-        name: 'Authorization',
-        data () {
+        name: 'authorization',
+        data() {
             return {
-                msg: 'Authorization'
+                username: '',
+                password: ''
+            }
+        },
+        methods: {
+            authorization () {
+                const { username, password } = this;
+                this.$store.dispatch(AUTH_REQUEST, {username, password}).then(() => {
+                    this.$router.push('/home');
+                });
             }
         }
     }
 </script>
 
 <style scoped>
-
 </style>
