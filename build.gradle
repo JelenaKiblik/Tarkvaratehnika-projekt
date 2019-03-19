@@ -20,6 +20,7 @@ dependencies {
 	compile "com.h2database:h2"
     compile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.1'
     compileOnly 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

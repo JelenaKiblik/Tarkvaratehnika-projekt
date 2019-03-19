@@ -32,6 +32,7 @@
                                 <!--<router-link to="/Edit">Edit recipe</router-link>-->
                             <!--</li>-->
                         </div>
+                        <div><router-link to="/authorization">Login</router-link></div>
                     </ul>
             </div>
         </nav>
@@ -39,23 +40,14 @@
             <transition name="moveInUp">
                 <router-view/>
             </transition>
-
         </div>
     </div>
 </template>
 
 
 <script>
-    import axios from "axios";
-    import Home from "./components/Home.vue"
     export default {
-        name: 'App',
-        component: {
-            Home
-        },
-        mounted () {
-            axios.get('http://localhost:8080/hello-world').then(response => (this.home = response.data));
-        }
+        name: 'app',
     }
 </script>
 

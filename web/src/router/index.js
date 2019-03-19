@@ -1,19 +1,27 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import Home from '@/components/Home'
+import Recipe from '@/components/Recipe'
 import Recipes from '@/components/Recipes'
 import AddRecipe from '@/components/AddRecipe'
 import MyAccount from '@/components/MyAccount'
-import Edit from "../components/Edit";
+import Edit from "@/components/Edit";
+import authorization from "@/components/Authorization";
+import store from "@/store";
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const router = new VueRouter({
     routes: [
         {
             path: '/',
             name: 'Home',
             component: Home
+        },
+        {
+            path: '/Authorization',
+            name: 'authorization',
+            component: authorization
         },
         {
             path: '/Recipes',
@@ -31,10 +39,29 @@ export default new Router({
             component: MyAccount
         },
         {
-            path: '/recipe/:id/edit',
-            name: 'Edit',
-            component: Edit
-
+            path: '/recipe',
+            name: 'recipe',
+            component: Recipe,
+            props:true
+        },
+        {
+            path: '/edit',
+            component: Edit,
+            name: 'edit',
+            props:true
         },
     ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+    const publicPages = ['/authorization'];
+    const authRequired = !publicPages.includes(to.path);
+    const loggedIn = store.getters.isAuthenticated;
+
+    if (authRequired && !loggedIn) {
+        return next('/authorization');
+    }
+    next();
+});
+
+export default router;
