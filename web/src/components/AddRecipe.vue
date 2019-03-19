@@ -16,24 +16,40 @@
 
 <script>
     import http from "../http-common";
+    import Vue from 'vue';
+    import VeeValidate from 'vee-validate';
+    Vue.use(VeeValidate);
     export default {
-        name: 'AddRecipe',
+        name: 'addRecipe',
         data() {
             return {
-                title: 'AddRecipe',
-                name: null,
-                description: null,
-                ingredients: null
-            }
+                recipe:{
+                    id:0,
+                    name: "",
+                    description: "",
+                    ingredients: "",
+                },
+                submitted: false
+            };
         },
         methods: {
-            addRecipe: function (event) {
-                http.post("/recipes", {
-                    recipeName: this.name,
-                    recipeDescription: this.description
-                });
-                //ei tee brauserile refreshi
-                if (event) event.preventDefault()
+            addRecipe() {
+                let data = {
+                    name: this.recipe.name,
+                    description: this.recipe.description,
+                    ingredients: this.recipe.ingredients,
+
+                };
+                http
+                    .post("/recipe", data)
+                    .then(response => {
+                        this.recipe.id = response.data.id;
+                    });
+                this.submitted = true;
+            },
+            newRecipe() {
+                this.submitted = false;
+                this.recipe = {};
             }
         },
 
