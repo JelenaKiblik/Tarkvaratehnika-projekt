@@ -5,6 +5,7 @@ import Recipe from '@/components/Recipe'
 import Recipes from '@/components/Recipes'
 import AddRecipe from '@/components/AddRecipe'
 import MyAccount from '@/components/MyAccount'
+import MakeAccount from '@/components/MakeAccount'
 import Edit from "@/components/Edit";
 import authorization from "@/components/Authorization";
 // import store from "@/store";
@@ -22,6 +23,10 @@ const router = new VueRouter({
             path: '/Authorization',
             name: 'authorization',
             component: authorization
+        },{
+            path: '/MakeAccount',
+            name: 'MakeAccount',
+            component: MakeAccount
         },
         {
             path: '/Recipes',

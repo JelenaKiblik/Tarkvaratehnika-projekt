@@ -9,10 +9,6 @@
                             <h1 class="header-logo">FoodBook</h1>
                         </li>
 
-                        <li class="search-box">
-                            <input type="text" placeholder="Find recipe ..." class="form-control">
-                            <button type="submit">Find</button>
-                        </li>
 
                         <div class="menu-buttons">
                             <li>
@@ -60,8 +56,8 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #382c50;
-        margin-top: 50px;
         width:80%;
+        margin: 0 auto;
     }
 
     .header-logo {
