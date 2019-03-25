@@ -16,7 +16,7 @@
 
                         <div class="menu-buttons">
                             <li>
-                            <router-link to="/" class="navbar-brand">Home</router-link>
+                            <router-link to="/" >Home</router-link>
                             </li>
 
                             <li>
@@ -28,11 +28,13 @@
                             <li>
                                 <router-link to="/MyAccount">My account</router-link>
                             </li>
-                            <!--<li>-->
-                                <!--<router-link to="/Edit">Edit recipe</router-link>-->
-                            <!--</li>-->
+                            <li>
+                                <router-link to="/authorization">Login</router-link>
+                            </li>
                         </div>
-                        <div><router-link to="/authorization">Login</router-link></div>
+                        <!--<div>-->
+                            <!--<router-link to="/authorization">Login</router-link>-->
+                        <!--</div>-->
                     </ul>
             </div>
         </nav>

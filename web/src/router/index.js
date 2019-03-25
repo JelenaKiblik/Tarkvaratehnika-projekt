@@ -7,7 +7,7 @@ import AddRecipe from '@/components/AddRecipe'
 import MyAccount from '@/components/MyAccount'
 import Edit from "@/components/Edit";
 import authorization from "@/components/Authorization";
-import store from "@/store";
+// import store from "@/store";
 
 Vue.use(VueRouter)
 
@@ -53,15 +53,15 @@ const router = new VueRouter({
     ]
 });
 
-router.beforeEach((to, from, next) => {
-    const publicPages = ['/authorization'];
-    const authRequired = !publicPages.includes(to.path);
-    const loggedIn = store.getters.isAuthenticated;
-
-    if (authRequired && !loggedIn) {
-        return next('/authorization');
-    }
-    next();
-});
+// router.beforeEach((to, from, next) => {
+//     const publicPages = ['/authorization'];
+//     const authRequired = !publicPages.includes(to.path);
+//     const loggedIn = store.getters.isAuthenticated;
+//
+//     if (authRequired && !loggedIn) {
+//         return next('/authorization');
+//     }
+//     next();
+// });
 
 export default router;
