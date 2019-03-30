@@ -39,7 +39,7 @@
         },
         methods: {
             redirect: function (event) {
-                this.$router.push('MakeAccount')
+                this.$router.push('Register')
             }
         }
     }

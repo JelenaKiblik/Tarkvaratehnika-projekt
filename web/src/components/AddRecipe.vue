@@ -1,5 +1,5 @@
 <template>
-    <div id="recipeapp">
+    <div id="recipe-app">
         <div class="AddRecipe">
             <h3>Add new recipe</h3>
             <form style="display: flex; flex-direction: column; align-items: baseline; justify-content: space-around " >
@@ -95,10 +95,10 @@
         width: 100%;
         margin: 10px 0 0;
     }
-    .uploadBTN{
-        margin-top: 10px;
-        border: black 1px ;
-    }
+    /*.uploadBTN{*/
+        /*margin-top: 10px;*/
+        /*border: black 1px ;*/
+    /*}*/
     .saveBTN {
         margin-top: 10px;
         border: black 1px ;

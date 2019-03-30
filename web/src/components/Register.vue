@@ -1,7 +1,7 @@
 <template>
-    <div class="submitform">
+    <div class="submit-form">
         <div v-if="!submitted" class="register-form" style="font-size:20px">
-            <h1 style="font-size:170%">Registration</h1>
+            <h1 style="font-size:150%">Registration</h1>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" id="email" required v-model="user.email" name="email">
@@ -87,4 +87,14 @@
 </script>
 
 <style scoped>
+    .submit-form {
+        margin-top:100px;
+        width: 80%;
+        color: #382c50
+    }
+    .register-form{
+        margin:auto;
+        width: 40%;
+        color: #382c50;
+    }
 </style>
