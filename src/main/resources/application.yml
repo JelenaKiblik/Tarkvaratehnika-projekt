@@ -2,7 +2,7 @@ server:
 port: 9000
 spring:
   datasource:
-    url: jdbc:postgresql://35.189.242.241:5432/foodbook
+    url: jdbc:postgresql://35.189.242.241:5432/foodbookdb
     username: postgres
     password: foodbookpassword
   jpa:

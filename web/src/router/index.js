@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Home from '@/components/Home'
 import Recipe from '@/components/Recipe'
 import Recipes from '@/components/Recipes'
@@ -8,6 +7,7 @@ import MyAccount from '@/components/MyAccount'
 import MakeAccount from '@/components/MakeAccount'
 import Edit from "@/components/Edit";
 import authorization from "@/components/Authorization";
+import VueRouter from "vue-router";
 // import store from "@/store";
 
 Vue.use(VueRouter)

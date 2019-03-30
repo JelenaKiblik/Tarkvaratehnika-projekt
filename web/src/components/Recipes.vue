@@ -51,8 +51,7 @@
         margin-top:100px;
     }
     .recipe-item {
-        border: black 1px;
-        border-style: solid;
+        border: 1px solid black;
         list-style-type: none;
         margin: 20px;
         padding-bottom: 10px;
