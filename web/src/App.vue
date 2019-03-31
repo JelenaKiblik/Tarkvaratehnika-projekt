@@ -38,8 +38,13 @@
             <transition name="moveInUp">
                 <router-view/>
             </transition>
+
         </div>
     </div>
+
+
+
+
 </template>
 
 

@@ -1,6 +1,6 @@
 module.exports = {
     runtimeCompiler: true,
     devServer: {
-        port: 9000
+        port: 8080
     }
 };

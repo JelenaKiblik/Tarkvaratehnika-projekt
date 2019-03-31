@@ -1,19 +1,25 @@
 <template>
     <div class="d-flex flex-column">
-        <div>
+        <div class="caption text-center">
             <h3>{{ msg }}</h3>
-        </div>
+
+        </div><br>
 
         <div>
             <img src="../assets/header.jpg">
         </div>
 
         <br>
-        
-        <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                <input type="text" placeholder="otsing" aria-label="otsing" class="form-control">
-                <button type="submit">Find</button>
-        </div>
+
+        <form class="input-group mb-3 " >
+            <input class="form-control form-control-sm" type="search" placeholder="Search" >
+            <div class="input-group-append">
+                <button class="btn btn-outline-dark btn-sm my-2 my-sm-0" type="submit">Search</button>
+            </div>
+
+        </form>
+
+
 
 
 
@@ -34,7 +40,7 @@
         name: 'Home',
         data () {
             return {
-                msg: 'Welcome to FoodBook!'
+                msg: 'Find some recipes!'
             }
         },
         methods: {
