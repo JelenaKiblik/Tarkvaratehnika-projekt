@@ -1,4 +1,4 @@
-package ee.ttu.tarkvaratehnika.config;
+package ee.ttu.tarkvaratehnika.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;

@@ -13,35 +13,27 @@ import javax.validation.constraints.NotNull;
 public class Recipe {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq1")
-    @SequenceGenerator(name = "seq1", sequenceName = "recipe_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     @Column(name = "recipe_name")
     private String recipeName;
 
-
     @NotNull
     @Column(name = "recipe_description")
     private String recipeDescription;
 
-    /*
-    @Valid
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(
-            name = "ingredients",
-            joinColumns = @JoinColumn(name = "recipe_id",
-                    referencedColumnName = "id")
-    )
-    private List<Ingredient> ingredients;
-    */
+    @NotNull
+    @Column(name = "recipe_ingredients")
+    private String recipeIngredients;
 
     @Override
     public String toString() {
         return "Recipe{" +
                 "recipeName='" + recipeName + '\'' +
                 ", recipeDescription='" + recipeDescription + '\'' +
+                ", recipeIngredients='" + recipeIngredients + '\'' +
                 '}';
     }
 }

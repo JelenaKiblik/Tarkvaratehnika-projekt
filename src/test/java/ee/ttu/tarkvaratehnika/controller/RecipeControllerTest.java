@@ -1,4 +1,4 @@
-package ee.ttu.tarkvaratehnika;
+package ee.ttu.tarkvaratehnika.controller;
 
 import ee.ttu.tarkvaratehnika.controller.RecipeController;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package ee.ttu.tarkvaratehnika.dao;
+package ee.ttu.tarkvaratehnika.repository;
 
 import ee.ttu.tarkvaratehnika.model.Recipe;
 import org.springframework.data.repository.CrudRepository;
@@ -11,15 +11,10 @@ import java.util.Optional;
 @RepositoryRestResource(collectionResourceRel = "recipe", path = "recipe")
 public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
-    /*
-    List<Recipe> findByName (@Param("name") String name);
-    */
-    Iterable<Recipe> findAll();
-
+    List<Recipe> findAll();
     Optional<Recipe> findById(Long id);
-
+    List<Recipe> findByRecipeName (@Param("recipe_name") String name);
     Recipe save(Recipe recipe);
-
     void deleteAll();
 
 }

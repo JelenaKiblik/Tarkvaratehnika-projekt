@@ -2,16 +2,21 @@ package ee.ttu.tarkvaratehnika;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @SpringBootApplication
 public class Application {
-    //private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
     /*
     @Bean
     public CommandLineRunner demo(RecipeRepository repository) {
@@ -22,7 +27,7 @@ public class Application {
         ings.add(new Ingredient("Eggs"));
         return (args) -> {
 
-            repository.save(new Recipe("chocolate fudge cake",
+            repository.addRecipe(new Recipe("chocolate fudge cake",
                     "Sandwich the two cakes together with the butter icing and cover the sides and the top of the cake with more butter icing.",
                     ings));
 
