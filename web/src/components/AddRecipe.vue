@@ -33,9 +33,9 @@
             };
         },
         methods: {
-            redirect: function (event) {
-                this.$router.push('Recipes')
-            },
+        //     redirect: function (event) {
+        //         this.$router.push('Recipes')
+        //     },
 
 
             addRecipe() {
