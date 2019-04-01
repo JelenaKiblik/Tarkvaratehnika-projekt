@@ -24,13 +24,6 @@
 
 
 
-        <div>
-            <!--<button class="saveBTN" v-on:click="redirect">Make an account</button>-->
-            <!--<button class="saveBTN" v-on:click="redirect">Sign in</button>-->
-        </div>
-
-
-
 
     </div>
 </template>
@@ -43,11 +36,6 @@
                 msg: 'Find some recipes!'
             }
         },
-        methods: {
-            redirect: function (event) {
-                this.$router.push('Register')
-            }
-        }
     }
 </script>
 
