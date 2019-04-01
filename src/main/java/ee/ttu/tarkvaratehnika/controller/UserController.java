@@ -4,9 +4,10 @@ import ee.ttu.tarkvaratehnika.model.User;
 import ee.ttu.tarkvaratehnika.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +42,12 @@ public class UserController {
         } else {
             System.out.println("Registration failed");
         }
+    }
+
+    @GetMapping(value= "/loggedIn")
+    public Optional<User> getLoggedInUser(Principal principal) {
+        String username = principal.getName();
+        if(!userService.existsByUsername(username)) return null;
+        return userService.getUserByUsername(username);
     }
 }

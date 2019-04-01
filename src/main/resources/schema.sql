@@ -1,17 +1,17 @@
 
-create table recipes
-(
-  recipe_id serial,
-  recipe_name varchar(50),
-  recipe_description text,
-  recipe_ingredients text,
-  recipe_image bytea
-);
+-- create table recipes
+-- (
+--   recipe_id serial,
+--   recipe_name varchar(50),
+--   recipe_description text,
+--   recipe_ingredients text,
+--   recipe_image bytea
+-- );
 
 create table users
 (
   id serial,
-  user_username varchar(50),
+  username varchar(50),
   password text,
   email varchar(50)
 );
