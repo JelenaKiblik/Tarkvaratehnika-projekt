@@ -9,6 +9,7 @@
                 Upload image: <input type="file" @change="onFileChanged">
                 <!--<button class="uploadBTN"@click="onUpload">Upload!</button>-->
                 <button class="saveBTN" v-on:click="redirect">Save</button>
+
             </form>
         </div>
     </div>
@@ -20,7 +21,7 @@
     import VeeValidate from 'vee-validate';
     Vue.use(VeeValidate);
     export default {
-        name: 'addRecipe',
+        name: 'add',
         data() {
             return {
                 recipe:{
@@ -38,7 +39,7 @@
         //     },
 
 
-            addRecipe() {
+            addRecipe: function (event) {
                 let data = {
                     name: this.recipe.name,
                     description: this.recipe.description,
@@ -82,9 +83,7 @@
         width: 50%;
         margin: 10px 0 0;
     }
-    form {
-        float: left;
-    }
+
     form {
         border: black 1px;
         top: 50%;

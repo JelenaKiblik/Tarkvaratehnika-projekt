@@ -50,7 +50,7 @@ const router = new VueRouter({
             props:true
         },
         {
-            path: '/add',
+            path: '/addRecipe',
             name: 'AddRecipe',
             component: AddRecipe,
         },
