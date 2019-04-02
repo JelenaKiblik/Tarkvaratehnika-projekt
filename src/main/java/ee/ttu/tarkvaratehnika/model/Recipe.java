@@ -16,60 +16,30 @@ public class Recipe {
     private Long id;
 
     @NotNull
-    @Column(name = "recipe_name", unique = true)
-    private String recipeName;
+    @Column(name = "name")//(name = "recipe_name")
+    private String name;
 
     @NotNull
-    @Column(name = "recipe_description")
-    private String recipeDescription;
+    @Column(name = "description")//(name = "recipe_description")
+    private String description;
 
     @NotNull
-    @Column(name = "recipe_ingredients")
-    private String recipeIngredients;
+    @Column(name = "ingredients")//(name = "recipe_ingredients")
+    private String ingredients;
 
+    /*
     @Column(name = "recipe_image")
     private String recipeImage;
 
-    protected Recipe() {
-    }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getRecipeName() {
-        return recipeName;
-    }
-
-    public String getRecipeDescription() {
-        return recipeDescription;
-    }
-
-    public String getRecipeIngredients() {
-        return recipeIngredients;
-    }
-
-    public void setRecipeName(String recipeName) {
-        this.recipeName = recipeName;
-    }
-
-    public void setRecipeDescription(String recipeDescription) {
-        this.recipeDescription = recipeDescription;
-    }
-
-    public void setRecipeIngredients(String recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
-    }
-
+     */
     @Override
     public String toString() {
-        return String.format(
-                "Recipe[id=%d, recipeName='%s', recipeDescription='%s', recipeIngredients='%s']",
-                id, recipeName, recipeDescription, recipeIngredients);
-
+        return "Recipe{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", ingredients='" + ingredients + '\'' +
+                '}';
     }
 }

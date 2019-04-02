@@ -13,7 +13,7 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
     List<Recipe> findAll();
     Optional<Recipe> findById(Long id);
-    List<Recipe> findByRecipeName (@Param("recipe_name") String name);
+    List<Recipe> findByName (@Param("name") String name);
     Recipe save(Recipe recipe);
     void deleteAll();
 

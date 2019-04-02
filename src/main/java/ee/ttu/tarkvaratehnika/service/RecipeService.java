@@ -23,7 +23,7 @@ public class RecipeService {
     }
 
     public List<Recipe> getByName(String name) {
-        return recipeRepository.findByRecipeName(name);
+        return recipeRepository.findByName(name);
     }
 
     public Recipe addRecipe(Recipe recipe) {
