@@ -33,7 +33,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         try {
             ee.ttu.tarkvaratehnika.model.User creds = new ObjectMapper()
                     .readValue(req.getInputStream(), ee.ttu.tarkvaratehnika.model.User.class);
-
+            System.out.println("Running authFilter attempt");
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             creds.getUsername(),
@@ -50,6 +50,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                             HttpServletResponse res,
                                             FilterChain chain,
                                             Authentication auth) throws IOException, ServletException {
+
+        System.out.println("Running authFilter successfulAuth");
 
         String token = JWT.create()
                 .withSubject(((User) auth.getPrincipal()).getUsername())

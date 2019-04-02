@@ -1,11 +1,11 @@
-#server:
-#port: 9000
-#spring:
-#  datasource:
-#    url: jdbc:hsqldb:mem:localhsqldb
-#  jpa:
-#    hibernate:
-#      ddl-auto: none
+server:
+  port: 9000
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:localhsqldb
+  jpa:
+    hibernate:
+      ddl-auto: none
 
 
 #spring:

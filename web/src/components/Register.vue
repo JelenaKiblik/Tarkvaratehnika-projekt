@@ -59,10 +59,10 @@
         methods:{
             signUp(){
                 let data = {
-                    email: this.user.email,
                     username: this.user.username,
                     password: this.user.password,
-                    role: this.user.role
+                    email: this.user.email
+                    //role: this.user.role
                 };
                 if(!this.user.email){this.emailError="Add an email" }
                 if(this.user.email){this.emailError=""}
@@ -74,9 +74,11 @@
                 if(this.password2){this.password2Error=""}
                 if(this.password2!=this.user.password && this.password2 && this.user.password ){this.passwordMError="Passwords are not the same"}
                 if(this.password2==this.user.password){this.passwordMError=""}
+                console.log("Final check....");
                 if(!this.user.emailError && !this.user.usernameError && !this.user.passwordError && !this.password2Error && !this.passwordMError){
+                    console.log("....didn't fail.")
                     http
-                        .post("/register", data)
+                        .post("http://localhost:9000/register", data)
                         .then(response =>{
                             this.user.id = response.data.id;
                         });

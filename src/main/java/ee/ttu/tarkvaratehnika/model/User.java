@@ -20,7 +20,7 @@ public class User {
     private Long id;
 
     @NotNull
-    @Column(name = "username")
+    @Column(name = "username"/*, unique = true*/)
     private String username;
 
     @NotNull
@@ -29,13 +29,14 @@ public class User {
 
 
     @NotNull
-    @Column(name = "email")
+    @Column(name = "email"/*, unique = true*/)
     private String email;
 
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "id=" + id +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';

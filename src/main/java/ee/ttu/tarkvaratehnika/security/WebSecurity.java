@@ -1,7 +1,5 @@
 package ee.ttu.tarkvaratehnika.security;
 
-import ee.ttu.tarkvaratehnika.security.JWTAuthenticationFilter;
-import ee.ttu.tarkvaratehnika.security.JWTAuthorizationFilter;
 import ee.ttu.tarkvaratehnika.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,10 +14,12 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import static ee.ttu.tarkvaratehnika.security.SecurityConstants.LOG_IN_URL;
 import static ee.ttu.tarkvaratehnika.security.SecurityConstants.SIGN_UP_URL;
 
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
+
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
@@ -33,8 +33,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
+        http
+                .cors().disable()
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.POST, SIGN_UP_URL, LOG_IN_URL).permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))

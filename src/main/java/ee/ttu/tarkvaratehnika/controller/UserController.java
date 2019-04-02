@@ -4,14 +4,13 @@ import ee.ttu.tarkvaratehnika.model.User;
 import ee.ttu.tarkvaratehnika.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9000")
+@CrossOrigin(origins = "http://localhost:8080")
 public class UserController {
 
     @Autowired
@@ -31,15 +30,17 @@ public class UserController {
     }
 
     @PostMapping(value = "/register")
-    public void registerUser(@RequestBody User user) {
+    public User registerUser(@RequestBody User user) {
         System.out.printf("Running registration " + user.toString());
         if (!userService.existsByUsername(user.getUsername())
                 && !userService.existsByEmail(user.getEmail())) {
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            userService.addUser(user);
+            User newUser = userService.addUser(user);
             System.out.printf("User registered " + user.toString());
+            return newUser;
         } else {
             System.out.println("Registration failed");
+            return null;
         }
     }
 }
