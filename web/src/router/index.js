@@ -12,6 +12,7 @@ import store from "@/store";
 import Register from "@/components/Register";
 import Authorization from "../components/Authorization";
 
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -49,7 +50,7 @@ const router = new VueRouter({
             props:true
         },
         {
-            path: '/add',
+            path: '/addRecipe',
             name: 'AddRecipe',
             component: AddRecipe,
         },
@@ -68,15 +69,14 @@ const router = new VueRouter({
 });
 
 
-router.beforeEach((to, from, next) => {
-    const publicPages = ['/authorization', '/register'];
-    const authRequired = !publicPages.includes(to.path);
-    const loggedIn = store.getters.isAuthenticated;
-
-    if (authRequired && !loggedIn) {
-        return next('/authorization');
-    }
-    next();
-});
-
+// router.beforeEach((to, from, next) => {
+//     const publicPages = ['/authorization', '/register'];
+//     const authRequired = !publicPages.includes(to.path);
+//     const loggedIn = store.getters.isAuthenticated;
+//
+//     if (authRequired && !loggedIn) {
+//         return next('/authorization');
+//     }
+//     next();
+// });
 export default router;
