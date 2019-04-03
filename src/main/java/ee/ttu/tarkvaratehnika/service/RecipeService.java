@@ -27,6 +27,7 @@ public class RecipeService {
     }
 
     public Recipe addRecipe(Recipe recipe) {
+        System.out.println("Adding recipe  " + recipe.toString());
         return recipeRepository.save(recipe);
     }
 
