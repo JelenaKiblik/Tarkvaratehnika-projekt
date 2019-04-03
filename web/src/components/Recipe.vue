@@ -3,7 +3,6 @@
         <div class="container">
             <div v-if="!submitted">
                 <h3>{{this.recipe.name}}</h3>
-
                 <div v-if="this.recipe" style="text-align:left">
                     <div>
                         <label>Description: </label> {{this.recipe.description}}
@@ -11,16 +10,16 @@
                     <div>
                         <label>Ingredients: </label> {{this.recipe.ingredients}}
                     </div>
-                    <button class="button is-small btn-danger" v-on:click="deleteById()">Delete</button>
-                    <button class="button is-small btn-danger" v-on:click="changeRecipe()">Edit</button>
-                    <router-link :to="{name: 'Edit', params: {id: recipe.id}}">Edit</router-link>
+                    <button class="button is-small btn-danger" style="float:left;" >
+                        <router-link :to="{name: 'editRecipe', params: {recipe:recipe, id: recipe.id}}">Edit</router-link></button>
                 </div>
+                <button class="button is-small btn-danger" style="float:left; margin-left:5px" v-on:click="deleteRecipe()">Delete</button>
             </div>
             <div v-else>
-                <h3>Recipe is deleted!</h3>
-                <!--<div class="col-md-6">-->
-                    <!--<router-view @refreshData="refreshDetails"></router-view>-->
-                <!--</div>-->
+                <h3>Recipe is deleted...</h3>
+                <router-link to="/recipes">
+                    <button type="reset" >All recipes</button>
+                </router-link>
             </div>
         </div>
     </div>
@@ -32,24 +31,24 @@
         name: "Recipe",
         props: ["recipe"],
         data() {
-            return{
+            return {
                 submitted: false
             };
         },
         methods: {
-            deleteById() {
+            deleteRecipe() {
                 http
                     .delete("/recipe/" + this.recipe.id)
                     .then(response => {
-                        this.recipes = response.data;
+                        this.$emit("refreshData");
+                        this.$router.push('/recipe');
                     });
                 this.submitted = true;
-            },
-            changeRecipe(){
             }
         }
     }
 </script>
+
 
 <style scoped>
     h3 {
