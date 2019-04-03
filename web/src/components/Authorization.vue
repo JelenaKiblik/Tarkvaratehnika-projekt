@@ -17,11 +17,12 @@
         name: 'authorization',
         data() {
             return {
-                username: '',
-                password: ''
+                username: "",
+                password: ""
             }
         },
         methods: {
+
             authorization () {
                 const { username, password } = this;
                 this.$store.dispatch(AUTH_REQUEST, {username, password}).then(() => {

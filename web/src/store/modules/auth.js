@@ -18,18 +18,19 @@ const actions = {
 
 const mutations = {
     [AUTH_REQUEST]: (state, user) => {
-        let data = 'username='+user.username+'&password='+user.password;
-        let headers = {
-            'Content-type': 'application/x-www-form-urlencoded'
+        let data = {
+            username:user.username,
+            password:user.password
         };
-
-        axios.post('http://localhost:8080/login', data, {
+        console.log(data);
+        let headers = {
+            'Content-type': 'application/json'
+        };
+        console.log(headers);
+        axios.post('http://localhost:9000/login', data, {
             headers: headers,
-            auth:{
-                username: this.username,
-                password: this.password
-            }
         }).then(response => {
+            console.log(response);
             state.user = user;
             localStorage.setItem('user', user);
         }).catch(error => {
