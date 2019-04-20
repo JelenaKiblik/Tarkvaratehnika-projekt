@@ -11,19 +11,18 @@
 <!--                    </router-link>-->
 <!--                </li>-->
 <!--            </ul>-->
-
             <div v-for="(recipe, index) in recipes" :key="index">
-                    <router-link :to="{
+                <router-link :to="{
                  name: 'recipe',
                  params:{ recipe: recipe, id: recipe.id }}">
 
-                Name: {{ recipe.name }} <br> Description: {{ recipe.description }} <br> Ingredients: {{ recipe.ingredients }}
+                    Name: {{ recipe.name }} <br> Description: {{ recipe.description }} <br> Ingredients: {{ recipe.ingredients }}
                 </router-link>
             </div>
         </div>
-        <div class="col-md-6">
+            <div>
             <router-view @refreshData="refreshList"></router-view>
-        </div>
+            </div>
     </div>
 </template>
 
@@ -56,6 +55,12 @@
 </script>
 
 <style scoped>
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
     h3 {
         margin-top:100px;
     }

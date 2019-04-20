@@ -10,10 +10,10 @@
                     <div>
                         <label>Ingredients: </label> {{this.recipe.ingredients}}
                     </div>
-                    <button class="button is-small btn-danger" style="float:left;" >
+                    <button class="button is-small btn-primary" style="float:left;" >
                         <router-link :to="{name: 'editRecipe', params: {recipe:recipe, id: recipe.id}}">Edit</router-link></button>
                 </div>
-                <button class="button is-small btn-danger" style="float:left; margin-left:5px" v-on:click="deleteRecipe()">Delete</button>
+                <button class="button is-small btn-primary" style="float:left; margin-left:5px" v-on:click="deleteRecipe()">Delete</button>
             </div>
             <div v-else>
                 <h3>Recipe is deleted...</h3>
@@ -55,7 +55,14 @@
         margin-top:150px;
     }
     label{
-        min-width: 300px;
+        min-width: 100px;
         margin:auto
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    button {
+        margin-top: 5%;
     }
 </style>
