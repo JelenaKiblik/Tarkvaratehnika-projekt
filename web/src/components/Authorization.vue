@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h3>Login:</h3>
         <form id="authorization" v-on:submit.prevent="authorization">
             <input type='text' placeholder='username' v-model='username'>
             <input type='password' placeholder='password' v-model='password'>
@@ -34,7 +35,11 @@
 </script>
 
 <style scoped>
+
+    h3 {
+        margin-top: 7%;
+    }
     button {
-        margin-top:100px;
+        margin-top:50px;
     }
 </style>

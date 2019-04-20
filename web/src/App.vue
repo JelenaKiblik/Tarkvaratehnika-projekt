@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-
         <nav class="menu">
             <div class="container">
 
@@ -25,7 +24,7 @@
                                 <router-link to="/MyAccount">My account</router-link>
                             </li>
                             <li>
-                                <router-link to="/authorization">Login</router-link>
+                                <router-link to="/Authorization">Login</router-link>
                             </li>
                         </div>
                         <!--<div>-->

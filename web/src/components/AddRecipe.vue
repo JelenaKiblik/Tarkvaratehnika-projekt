@@ -7,7 +7,7 @@
                 Description: <input v-model="recipe.description" type="text" name="Description"><br>
                 Ingredients: <input v-model="recipe.ingredients" type="text" name="Ingredients"><br>
                 Upload image: <input type="file" @change="onFileChanged">
-                <!--<button class="uploadBTN"@click="onUpload">Upload!</button>-->
+                <button class="uploadBTN"@click="onUpload">Upload!</button>
                 <button class="saveBTN" v-on:click="addRecipe">Save</button>
 
             </form>
@@ -37,7 +37,6 @@
         //     redirect: function (event) {
         //         this.$router.push('Recipes')
         //     },
-
 
             addRecipe: function (event) {
                 let data = {
@@ -77,27 +76,23 @@
 
 <style scoped>
     h3 {
-        margin-top:150px;
+        margin-top: 7%;
     }
     input {
-        width: 50%;
-        margin: 10px 0 0;
+        width: 200px;
+        margin: 5px 0 0;
     }
 
     form {
         border: black 1px;
         top: 50%;
         left: 50%;
-        margin: 50px;
+        margin: 40px;
     }
-    input {
-        width: 100%;
-        margin: 10px 0 0;
+    .uploadBTN{
+        margin-top: 10px;
+        border: black 1px ;
     }
-    /*.uploadBTN{*/
-        /*margin-top: 10px;*/
-        /*border: black 1px ;*/
-    /*}*/
     .saveBTN {
         margin-top: 10px;
         border: black 1px ;
