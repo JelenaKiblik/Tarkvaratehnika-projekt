@@ -1,6 +1,6 @@
 <template>
     <div class="list row">
-        <div class="col-md-6">
+        <div style="margin-left: 20%" class="col-md-6">
             <h3>Recipes</h3>
 <!--            <ul>-->
 <!--                <li v-for="(recipe, index) in recipes" :key="index">-->
@@ -67,7 +67,6 @@
     recipe {
         border: 1px solid black;
         list-style-type: none;
-        margin: 20px;
         padding-bottom: 10px;
     }
 </style>

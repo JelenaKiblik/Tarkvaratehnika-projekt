@@ -11,7 +11,7 @@
                         <label>Ingredients: </label> {{this.recipe.ingredients}}
                     </div>
                     <button class="button is-small btn-primary" style="float:left;" >
-                        <router-link :to="{name: 'editRecipe', params: {recipe:recipe, id: recipe.id}}">Edit</router-link></button>
+                        <router-link :to="{name: 'edit', params: {recipe:recipe, id: recipe.id}}">Edit</router-link></button>
                 </div>
                 <button class="button is-small btn-primary" style="float:left; margin-left:5px" v-on:click="deleteRecipe()">Delete</button>
             </div>

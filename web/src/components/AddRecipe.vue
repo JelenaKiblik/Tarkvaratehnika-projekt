@@ -2,7 +2,7 @@
     <div id="recipe-app">
         <div class="AddRecipe">
             <h3>Add new recipe</h3>
-            <form style="display: flex; flex-direction: column; align-items: baseline; justify-content: space-around " >
+            <form style="margin-left:40%; display: flex; flex-direction: column; align-items: baseline;" >
                 Name: <input v-model="recipe.name" type="text" name="Name" id="user_input"><br>
                 Description: <input v-model="recipe.description" type="text" name="Description"><br>
                 Ingredients: <input v-model="recipe.ingredients" type="text" name="Ingredients"><br>
