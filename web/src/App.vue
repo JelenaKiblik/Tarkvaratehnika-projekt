@@ -33,12 +33,60 @@
                     </ul>
             </div>
         </nav>
-        <div class="container">
+        <div class="container main-content">
             <transition name="moveInUp">
                 <router-view/>
             </transition>
 
         </div>
+        <footer class="footer">
+            <div  style="background-color: #FAD7A0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="c-footer">
+                                <div class="card-body">
+                                    <div class="row d-flex justify-content-around">
+                                        <h5 class="card-title">Contact us</h5>
+                                        <h1 class="fas fa-address-card"></h1>
+                                    </div>
+                                    <div class="col">
+                                        <h6>phone: 978 278 782</h6>
+                                        <h6>e-mail: foodbook@gmail.com</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="c-footer">
+                                <div class="card-body">
+                                    <div class="row d-flex justify-content-around">
+                                        <h5 class="card-title">Follow us</h5>
+                                    </div>
+                                    <div class="col d-flex justify-content-center" id="socialmedia">
+                                        <h1 class="fab fa-facebook-square"></h1>
+                                        <h1 class="fab fa-twitter-square" style="margin-left: 7px; margin-right: 7px"></h1>
+                                        <h1 class="fab fa-instagram"></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="c-footer">
+                                <div class="card-body">
+                                    <div class="row d-flex justify-content-around">
+                                        <h5 class="card-title">Ask for advertisement</h5>
+                                    </div>
+                                    <div class="col d-flex justify-content-around">
+                                        <a href="#" class="btn btn-dark my-2 my-sm-0">Ask</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
 
@@ -60,8 +108,9 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #382c50;
-        width:80%;
         margin: 0 auto;
+        position: relative;
+        min-height: 100vh;
     }
 
     .header-logo {
@@ -127,6 +176,18 @@
 
     .header-ul li a:hover {
         background-color: #F39C12;
+    }
+
+    .main-content {
+        min-width: 80%;
+        padding-bottom: 150px;    /* Footer height */
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 150px;            /* Footer height */
     }
 
 </style>
