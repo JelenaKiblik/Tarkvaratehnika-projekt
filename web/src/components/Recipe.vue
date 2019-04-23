@@ -2,18 +2,31 @@
     <div class="recipe">
         <div class="container">
             <div v-if="!submitted">
-                <h3>{{this.recipe.name}}</h3>
+                <h2 style="color: #873600; font-family: Papyrus">{{this.recipe.name}}</h2>
                 <div v-if="this.recipe" style="text-align:left">
-                    <div>
-                        <label>Description: </label> {{this.recipe.description}}
+
+                    <div class="row">
+                        <div class="col">
+                            <img src="../assets/foodpic.jpeg"  class="rounded w-100 d-block ">
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h4 style="color: #873600; font-family: Papyrus">Description: </h4>
+                                {{this.recipe.description}}
+                            </div>
+                            <br>
+                            <div>
+                                <h4 style="color: #873600; font-family: Papyrus">Ingredients: </h4>
+                                {{this.recipe.ingredients}}
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label>Ingredients: </label> {{this.recipe.ingredients}}
-                    </div>
-                    <button class="button is-small btn-primary" style="float:left;" >
-                        <router-link :to="{name: 'edit', params: {recipe:recipe, id: recipe.id}}">Edit</router-link></button>
+                    <button class="button is-small" style="color: #873600;" v-on:click="deleteRecipe()">Delete</button>
+                    <button class="button is-small" style="color: #873600;" >
+                        <router-link :to="{name: 'edit', params: {recipe:recipe, id: recipe.id}}">Edit</router-link>
+                    </button>
                 </div>
-                <button class="button is-small btn-primary" style="float:left; margin-left:5px" v-on:click="deleteRecipe()">Delete</button>
+
             </div>
             <div v-else>
                 <h3>Recipe is deleted...</h3>
@@ -51,8 +64,9 @@
 
 
 <style scoped>
-    h3 {
+    h2 {
         margin-top:150px;
+        margin-bottom: 50px;
     }
     label{
         min-width: 100px;

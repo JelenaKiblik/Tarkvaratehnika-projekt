@@ -5,7 +5,7 @@
 
         </div><br>
 
-        <div>
+        <div >
             <img src="../assets/header.jpg">
         </div>
 

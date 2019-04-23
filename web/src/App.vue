@@ -65,7 +65,8 @@
     }
 
     .header-logo {
-        color: white;
+        color: #873600;
+        font-family: Papyrus;
         margin: 5px;
         margin-right: 90px;
     }
@@ -79,7 +80,7 @@
     }
 
     button {
-        background-color: #a5c5fa;
+        background-color: #FAD7A0;
         padding:0.3em 1.2em;
         margin:0 0.1em 0.1em 0;
         border:0.16em solid rgba(255,255,255,0);
@@ -100,7 +101,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #8aa1e9;
+        background-color: #FAD7A0;
         position: fixed;
         top:0;
         left: 0;
@@ -117,14 +118,15 @@
 
     .header-ul li a {
         display: block;
-        color: white;
+        color: #873600;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        font-family: Papyrus;
     }
 
     .header-ul li a:hover {
-        background-color: #98a5fa;
+        background-color: #F39C12;
     }
 
 </style>
