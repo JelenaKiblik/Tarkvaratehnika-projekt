@@ -2,7 +2,7 @@ insert into recipes(id, name, description, ingredients)
 values (1, 'Salat', 'Very Good.', 'Cucumber, Tomato, Paprika, Cabbage.');
 
 insert into recipes(id, name, description, ingredients)
-values (2, 'Cake', 'Very Sweet.', 'Wheat Flour, Eggs, Sugar, Baking Powder.');
+values (2, 'Cake', 'Very Sweet.', 'Wheat flour, eggs, sugar, baking powder.');
 
 insert into recipes(id, name, description, ingredients)
 values (3, 'Cocoa pudding', 'Good taste and easy to make.', 'Cocoa powder, milk, potato starch.');
@@ -34,3 +34,9 @@ insert into recipes(id, name, description, ingredients)
 values (10, 'Pumpkin soup', 'Whip up this easy pumpkin soup as a starter for a dinner party.',
         'Olive oil, onions, pumpkin, double cream.');
 
+insert into recipes(id, name, description, ingredients)
+values (11, 'Salat with chicken', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, chicken.');
+
+
+insert into recipes(id, name, description, ingredients)
+values (12, 'Salat with salmon', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, salmon.');

@@ -3,17 +3,16 @@
         <div class="search-wrapper" >
             <input type="text" v-model="searchStr" placeholder="Search recipe"/>
         </div>
+        <br>
         <div class="wrapper" >
-            <ul>
-                <li v-for="(recipe,index) in filteredList" :key="index">
+                <div v-for="(recipe,index) in filteredList" :key="index">
                     <router-link :to="{
                             name: 'recipe',
                             params: { recipe: recipe, id: recipe.id }
                         }" style="color:#a57934">
                         {{recipe.name}}
                     </router-link>
-                </li>
-            </ul>
+                </div>
         </div>
     </div>
 </template>
