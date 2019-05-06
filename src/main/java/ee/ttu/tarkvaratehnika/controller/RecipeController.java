@@ -2,6 +2,7 @@ package ee.ttu.tarkvaratehnika.controller;
 
 import ee.ttu.tarkvaratehnika.model.Recipe;
 import ee.ttu.tarkvaratehnika.service.RecipeService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +51,11 @@ public class RecipeController {
     @DeleteMapping(value = "/recipes")
     public void deleteAll() {
         recipeService.deleteAll();
+    }
+
+    @RequestMapping(value = "/recipes/search/{searchStr}", method = RequestMethod.GET)
+    public List<Recipe> searchRecipes(@PathVariable("searchStr") String searchStr) {
+        return recipeService.searchRecipesByName(searchStr);
     }
 
 }

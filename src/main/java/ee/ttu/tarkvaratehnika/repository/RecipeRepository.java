@@ -12,9 +12,8 @@ import java.util.Optional;
 public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
     List<Recipe> findAll();
+    List<Recipe> findByName(String searchStr);
     Optional<Recipe> findById(Long id);
-    List<Recipe> findByName (@Param("name") String name);
     Recipe save(Recipe recipe);
     void deleteAll();
-
 }

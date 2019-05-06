@@ -11,6 +11,7 @@ import store from "@/store";
 
 import Register from "@/components/Register";
 import Authorization from "../components/Authorization";
+import Search from "../components/Search";
 
 
 Vue.use(VueRouter);
@@ -65,18 +66,12 @@ const router = new VueRouter({
             name: 'register',
             component: Register
         },
+        {
+            path: '/search',
+            name: 'Search',
+            component: Search
+        },
     ]
 });
 
-
-// router.beforeEach((to, from, next) => {
-//     const publicPages = ['/authorization', '/register'];
-//     const authRequired = !publicPages.includes(to.path);
-//     const loggedIn = store.getters.isAuthenticated;
-//
-//     if (authRequired && !loggedIn) {
-//         return next('/authorization');
-//     }
-//     next();
-// });
 export default router;

@@ -39,4 +39,8 @@ public class RecipeService {
         recipeRepository.deleteAll();
     }
 
+    public List<Recipe> searchRecipesByName(String searchStr) {
+        return recipeRepository.findByName(searchStr);
+    }
+
 }

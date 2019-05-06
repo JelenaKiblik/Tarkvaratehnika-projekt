@@ -7,7 +7,7 @@
                 Description: <input v-model="recipe.description" type="text" name="Description"><br>
                 Ingredients: <input v-model="recipe.ingredients" type="text" name="Ingredients"><br>
                 Upload image: <input type="file" @change="onFileChanged">
-                <button class="uploadBTN"@click="onUpload">Upload!</button>
+                <button class="uploadBTN" @click="onUpload">Upload!</button>
                 <button class="saveBTN" v-on:click="addRecipe">Save</button>
 
             </form>

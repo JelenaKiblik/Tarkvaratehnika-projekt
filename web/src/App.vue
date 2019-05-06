@@ -26,10 +26,10 @@
                             <li>
                                 <router-link to="/Authorization">Login</router-link>
                             </li>
+                            <li>
+                                <router-link to="/search">Search</router-link>
+                            </li>
                         </div>
-                        <!--<div>-->
-                            <!--<router-link to="/authorization">Login</router-link>-->
-                        <!--</div>-->
                     </ul>
             </div>
         </nav>
@@ -126,6 +126,10 @@
         padding: 6px;
         border: bisque;
         font-size: 17px;
+    }
+
+    .search-wrapper {
+        position: relative;
     }
 
     button {
