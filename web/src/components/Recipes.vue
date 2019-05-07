@@ -1,22 +1,17 @@
-
 <template>
     <div class="container">
         <h1 style="color: #873600; font-family: Papyrus">Recipes</h1>
-        <br>
         <div v-for="(recipe, index) in recipes" :key="index">
             <router-link :to="{
              name: 'recipe',
              params:{ recipe: recipe, id: recipe.id }}">
-
-
             <div class="row">
-                <div class="col-lg-6" style="padding-top: 40px;">
+                <div class="col-lg-6" style="padding-top: 40px; margin-left:25%">
                     <img src="../assets/foodpic.jpeg"  class="rounded w-100 d-block ">
                     <h2 style="color: #873600; font-family: Papyrus">{{ recipe.name }}</h2>
-                    Description: {{ recipe.description }}
-                    Ingredients: {{ recipe.ingredients }}
-                    <br>
-                    <a class="btn btn-outline-success my-2 my-sm-0" role="button">Vaata retsepti</a>
+<!--                    Description: {{ recipe.description }}-->
+<!--                    Ingredients: {{ recipe.ingredients }}-->
+                    <a class="btn btn-outline-success my-2 my-sm-0" role="button">View recipe</a>
                     <br>
                 </div>
             </div>
@@ -27,7 +22,6 @@
     </div>
     </div>
 </template>
-
 
 <script>
     import http from "../http-common";
@@ -63,7 +57,6 @@
         color: black;
         text-decoration: none;
     }
-
 
     h1 {
         margin-top:100px;

@@ -2,18 +2,14 @@
     <div id="app">
         <nav class="menu">
             <div class="container">
-
                     <ul class="header-ul" style="display: flex; justify-content: space-between">
                         <li>
                             <h1 class="header-logo">FoodBook</h1>
                         </li>
-
-
                         <div class="menu-buttons">
                             <li>
                             <router-link to="/" >Home</router-link>
                             </li>
-
                             <li>
                                 <router-link to="/Recipes">Recipes</router-link>
                             </li>
@@ -37,7 +33,6 @@
             <transition name="moveInUp">
                 <router-view/>
             </transition>
-
         </div>
         <footer class="footer">
             <div  style="background-color: #FAD7A0">
@@ -88,12 +83,7 @@
             </div>
         </footer>
     </div>
-
-
-
-
 </template>
-
 
 <script>
     export default {
@@ -116,20 +106,7 @@
     .header-logo {
         color: #873600;
         font-family: Papyrus;
-        margin: 5px;
-        margin-right: 90px;
-    }
-
-    .search-box {
-        color: white;
-        margin: 10px;
-        padding: 6px;
-        border: bisque;
-        font-size: 17px;
-    }
-
-    .search-wrapper {
-        position: relative;
+        margin: 5px 90px 5px 5px;
     }
 
     button {

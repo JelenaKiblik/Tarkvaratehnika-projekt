@@ -4,7 +4,6 @@
             <div v-if="!submitted">
                 <h2 style="color: #873600; font-family: Papyrus">{{this.recipe.name}}</h2>
                 <div v-if="this.recipe" style="text-align:left">
-
                     <div class="row">
                         <div class="col">
                             <img src="../assets/foodpic.jpeg"  class="rounded w-100 d-block ">
@@ -26,7 +25,6 @@
                         <router-link :to="{name: 'edit', params: {recipe:recipe, id: recipe.id}}">Edit</router-link>
                     </button>
                 </div>
-
             </div>
             <div v-else>
                 <h3>Recipe is deleted...</h3>
@@ -61,7 +59,6 @@
         }
     }
 </script>
-
 
 <style scoped>
     h2 {

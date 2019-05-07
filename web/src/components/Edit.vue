@@ -11,12 +11,10 @@
                 <textarea class="form-control" id="edit-description" rows="1"
                           v-model="recipe.description"></textarea>
             </div>
-
             <div class="form-group">
                 <label for="edit-ingredients">Ingredients</label>
                 <textarea class="form-control" id="edit-ingredients" rows="1" v-model="recipe.ingredients"></textarea>
             </div>
-
             <b-button @click="updateRecipe" variant="success"><router-link :to="{
                             name: 'recipe',
                             params: { recipe: recipe, id: recipe.id }
@@ -31,8 +29,8 @@
     <div v-else>
         <h4>Changes saved! :)</h4>
     </div>
-
 </template>
+
 <script>
     import http from "../http-common"
     export default {
@@ -71,9 +69,11 @@
     h2 {
         margin-top: 10%;
     }
+
     form {
         margin: 10%;
         float: left;
         width: 80%
     }
+
 </style>

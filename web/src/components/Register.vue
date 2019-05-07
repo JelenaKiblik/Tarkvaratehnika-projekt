@@ -12,7 +12,6 @@
                 <input type="text" class="form-control" id="username" required v-model="user.username" name="username">
                 <div  style="color:red;"> {{usernameError}}</div>
             </div>
-
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" required v-model="user.password" name="password">
@@ -24,10 +23,8 @@
                 <div  style="color:red;"> {{password2Error}}</div>
                 <div  style="color:red;"> {{passwordMError}}</div>
             </div>
-
             <button v-on:click="signUp" class="btn btn-success">Register</button>
         </div>
-
         <div v-else>
             <h4>Registered!</h4>
         </div>
@@ -94,6 +91,7 @@
         width: 80%;
         color: #382c50
     }
+
     .register-form{
         margin:auto;
         width: 40%;

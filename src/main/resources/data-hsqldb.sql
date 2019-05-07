@@ -37,6 +37,19 @@ values (10, 'Pumpkin soup', 'Whip up this easy pumpkin soup as a starter for a d
 insert into recipes(id, name, description, ingredients)
 values (11, 'Salat with chicken', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, chicken.');
 
+insert into recipes(id, name, description, ingredients)
+values (13, 'Salat with salmon', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, salmon.');
 
 insert into recipes(id, name, description, ingredients)
-values (12, 'Salat with salmon', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, salmon.');
+values (14, 'Salat with turkey', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, turkey.');
+
+insert into recipes(id, name, description, ingredients)
+values (15, 'Salat with tofu', 'Very Good.', 'Cucumber, tomato, paprika, cabbage, tofu.');
+
+insert into recipes(id, name, description, ingredients)
+values (16, 'Cake with raisins', 'Cake is a baking classic, packed with zesty flavour.',
+        'Butter, sugar, flour, raisins, eggs, natural yoghurt.');
+
+insert into recipes(id, name, description, ingredients)
+values (17, 'Cake', 'Cake is a baking classic, packed with zesty flavour.',
+        'Butter, sugar, flour, eggs, natural yoghurt.');

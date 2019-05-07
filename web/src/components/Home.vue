@@ -6,23 +6,11 @@
         <div class="caption text-center">
             <h3 style="color: #873600; font-family: Papyrus">{{ msg }}</h3>
         </div>
-
-<!--        <form class="input-group mb-3 " >-->
-<!--            <input class="form-control form-control-sm" type="search" placeholder="Search" >-->
-<!--            <div class="input-group-append">-->
-<!--                <button class="btn btn-outline-dark btn-sm my-2 my-sm-0" type="submit">Search</button>-->
-<!--            </div>-->
-
-<!--        </form>-->
-
         <h3 style="color: #873600; font-family: Papyrus; padding-bottom: 50px">...or maybe you wanna try these recipes?</h3>
-
-
     </div>
 </template>
 
 <script>
-    import http from "../http-common";
     export default {
         name: 'Home',
         data () {
