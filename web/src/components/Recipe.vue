@@ -49,7 +49,7 @@
         methods: {
             deleteRecipe() {
                 http
-                    .delete("/recipe/" + this.recipe.id)
+                    .delete("/recipes/" + this.recipe.id)
                     .then(response => {
                         this.$emit("refreshData");
                         this.$router.push('/recipe');

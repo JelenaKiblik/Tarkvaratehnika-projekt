@@ -43,7 +43,7 @@
 
                 };
                 http
-                    .post("/recipe", data)
+                    .post("/recipes", data)
                     .then(response => {
                         this.recipe.id = response.data.id;
                     });
