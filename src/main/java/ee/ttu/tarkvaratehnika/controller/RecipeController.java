@@ -40,8 +40,16 @@ public class RecipeController {
         foundRecipe.setName(recipe.getName());
         foundRecipe.setDescription(recipe.getDescription());
         foundRecipe.setIngredients(recipe.getIngredients());
+//        foundRecipe.setRecipeImage(recipe.getRecipeImage());
         recipeService.addRecipe(foundRecipe);
     }
+
+//    @PutMapping(value = "/recipes/{id}/image")
+//    public void updateImage(@PathVariable Long id, @RequestBody Recipe recipe) {
+//        Recipe foundRecipe = recipeService.getById(id);
+//        foundRecipe.setRecipeImage(recipe.getRecipeImage());
+//        recipeService.addRecipe(foundRecipe);
+//    }
 
     @DeleteMapping(value = "/recipes/{id}")
     public void deleteById(@PathVariable Long id) {

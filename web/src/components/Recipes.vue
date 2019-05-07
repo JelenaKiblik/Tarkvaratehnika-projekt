@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1 style="color: #873600; font-family: Papyrus">Recipes</h1>
-        <div v-for="(recipe, index) in recipes" :key="index">
+        <div  v-for="(recipe, index) in recipes" :key="index">
             <router-link :to="{
              name: 'recipe',
              params:{ recipe: recipe, id: recipe.id }}">

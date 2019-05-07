@@ -27,12 +27,7 @@ public class Recipe {
     @Column(name = "ingredients")//(name = "recipe_ingredients")
     private String ingredients;
 
-    /*
-    @Column(name = "recipe_image")
-    private String recipeImage;
 
-
-     */
     @Override
     public String toString() {
         return "Recipe{" +
@@ -40,6 +35,7 @@ public class Recipe {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", ingredients='" + ingredients + '\'' +
+
                 '}';
     }
 }
