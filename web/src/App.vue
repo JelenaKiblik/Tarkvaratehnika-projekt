@@ -103,7 +103,7 @@
 
 <style>
     #app {
-        font-family: Geneva, Arial, Helvetica, sans-serif;
+        font-family: Papyrus;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
