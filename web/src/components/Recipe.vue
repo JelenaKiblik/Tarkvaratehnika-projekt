@@ -5,10 +5,10 @@
                 <h2 style="color: #873600; font-family: Papyrus">{{this.recipe.name}}</h2>
                 <div v-if="this.recipe" style="text-align:left">
                     <div class="row">
-                        <div class="col">
+                        <div class="col" style="background-color: antiquewhite;padding: 24px;border-radius: 37px;">
                             <img src="../assets/foodpic.jpeg"  class="rounded w-100 d-block ">
                         </div>
-                        <div class="col">
+                        <div class="col" style="background-color: antiquewhite;padding: 24px;border-radius: 37px;">
                             <div>
                                 <h4 style="color: #873600; font-family: Papyrus">Description: </h4>
                                 {{this.recipe.description}}
@@ -20,10 +20,17 @@
                             </div>
                         </div>
                     </div>
-                    <button class="button is-small" style="color: #873600;" v-on:click="deleteRecipe()">Delete</button>
-                    <button class="button is-small" style="color: #873600;" >
+
+
+                    <button class="button is-small" style="color: #873600; " >
                         <router-link :to="{name: 'edit', params: {recipe:recipe, id: recipe.id}}">Edit</router-link>
                     </button>
+                    <button class="button is-small" style="color: #873600;" v-on:click="deleteRecipe()">Delete</button>
+                    <br>
+                    <button  class="button is-small" style="color: #873600;">
+                        <router-link to="/Recipes">Go back to recipes</router-link>
+                    </button>
+                    <br><br>
                 </div>
             </div>
             <div v-else>

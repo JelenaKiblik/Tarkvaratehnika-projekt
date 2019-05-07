@@ -1,5 +1,6 @@
 <template>
     <div id="search" >
+        <h3>Type what you want</h3>
         <div class="search-wrapper" >
             <input type="text" v-model="searchStr" placeholder="Search recipe"/>
         </div>
@@ -10,7 +11,7 @@
                             name: 'recipe',
                             params: { recipe: recipe, id: recipe.id }
                         }" style="color:#a57934">
-                        {{recipe.name}}
+                        {{recipe.name }}
                     </router-link>
                 </div>
         </div>
