@@ -1,4 +1,6 @@
-# Retsepti äpp
+# Foodbook
+
+link rakendusele: foodbook.wut.ee
 
 Tiimi liikmed: Jelena Kiblik, Laura Leisberg, Ivan Uvarov.
 
