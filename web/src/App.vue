@@ -2,7 +2,7 @@
     <div id="app">
         <nav class="menu">
             <div class="container">
-                    <ul class="header-ul" style="display: flex; justify-content: space-between">
+                    <ul class="header-ul" style="display: flex; justify-content: space-between;max-width: 100%;z-index: 99 !important;">
                         <li>
                             <h1 class="header-logo">FoodBook</h1>
                         </li>
