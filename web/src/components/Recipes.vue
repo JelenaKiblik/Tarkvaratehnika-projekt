@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col" style="padding-top: 40px; margin-left:25%">
                             <img src="../assets/foodpic.jpeg"  class="rounded w-100 d-block ">
-                            <h2 style="color: #873600; font-family: Papyrus">{{ recipe.name }}</h2>
+                            <h2 style="color: #873600; font-size: 20px;">{{ recipe.name }}</h2>
         <!--                    Description: {{ recipe.description }}-->
         <!--                    Ingredients: {{ recipe.ingredients }}-->
                             <a class="btn btn-outline-success my-2 my-sm-0" role="button" id="button">View recipe</a>
